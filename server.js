@@ -32,7 +32,7 @@ app.get("/posts", async (req, res) => {
   }
 });
 
-//  POST create a new post
+// 🟢 POST create a new post
 app.post("/posts", async (req, res) => {
   try {
     const { title, content, author } = req.body;
@@ -56,7 +56,7 @@ app.post("/posts", async (req, res) => {
   }
 });
 
-// PUT update post by ID
+// 🟡 PUT update post by ID
 app.put("/posts/:id", async (req, res) => {
   try {
     const updatedPost = await Post.findByIdAndUpdate(
@@ -70,7 +70,7 @@ app.put("/posts/:id", async (req, res) => {
   }
 });
 
-//  DELETE post by ID
+// 🔴 DELETE post by ID
 app.delete("/posts/:id", async (req, res) => {
   try {
     await Post.findByIdAndDelete(req.params.id);
